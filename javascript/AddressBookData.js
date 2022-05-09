@@ -1,77 +1,50 @@
-const nameRegex = RegExp("^[A-Z]{1}[A-Za-z\\s]{2,}$");
-const phoneNumberRegex = RegExp("^[0-9]{2}\\s{1}[7-9]{1}[0-9]{9}$");
-const addressRegex = RegExp('^[a-zA-Z0-9#,&\\s]{4,}$');
-const zipRegex = RegExp("^[0-9]{3}\\s{0,1}[0-9]{3}$");
-
-class Contact {
-  
-  get id() {
-    return this._id;
-  }
-  set id(id) {
-    this._id = id;
-  }
-
-  get name() {
-    return this._name;
-  }
-  set name(name) {
-    if (nameRegex.test(name)) {
-      this._name = name;
-    } else {
-      throw "NAME is Invalid!";
+class AddressBookData {
+    get id() {
+        return this._id;
     }
-  }
-
-  get phoneNumber() {
-    return this._phoneNumber;
-  }
-  set phoneNumber(phoneNumber) {
-    if (phoneNumberRegex.test(phoneNumber)) {
-      this._phoneNumber = phoneNumber;
-    } else {
-      throw "PHONE NUMBER is Invalid!";
-    }   
-  }
-
-  get address() {
-    return this._address;
-  }
-  set address(address) {
-    if (addressRegex.test(address)) {
-      this._address = address;
-    } else {
-      throw "ADDRESS is Invalid!";
+    set id(id) {
+        this._id = id;
     }
-  }
-  
-  get city() {
-    return this._city;
-  }
-  set city(city) {
-    this._city = city;
-  }
-  
-  get state() {
-    return this._state;
-  }
-  set state(state) {
-    this._state = state;
-  }
 
-  get zip() {
-    return this._zip;
-  }
-  set zip(zip) {
-    if (zipRegex.test(zip)) {
-      this._zip = zip;
-    } else {
-      throw "ZIP is Invalid!";
+    get name() {
+        return this._name;
     }
-  }
+    set name(name) {
+        this._name = name;
+    }
 
-  toString(){
-      return `id ${this.id} \nName ${this.name} \nPhone Number ${this.phoneNumber} \nAddress ${this.address} \nCity ${this.city} \nState ${this.state} \nZip  ${this.zip}`;
-  }
+    get phoneNumber() {
+        return this.phoneNumber;
+    }
+    set phoneNumber(phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
 
+    get address() {
+        return this._address;
+    }
+    set address(address) {
+        this._address = address;
+    }
+
+    get city() {
+        return this._city;
+    }
+    set city(city) {
+        this._city = city;
+    }
+
+    get state() {
+        return this._state;
+    }
+    set state(state) {
+        this._state = state;
+    }
+
+    get zipcode() {
+        return this._zipcode;
+    }
+    set zipcode(zipcode) {
+        this._zipcode = zipcode;
+    }
 }

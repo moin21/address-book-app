@@ -36,7 +36,7 @@ function validAddress() {
     const address = document.querySelector('#address');
     const addressError = document.querySelector('.address-error');
     address.addEventListener('input', function() {
-        const addressRegex = RegExp('^^([A-Za-z0-9/.,-]{3,}.)+$');
+        const addressRegex = RegExp('^([A-Za-z0-9/.,-]{3,}.)+$');
         if (addressRegex.test(address.value)) {
             addressError.textContent = "";
         } else {
